@@ -37,10 +37,10 @@ class App extends Component {
   saveLocalStorage = () => {
     localStorage.setItem("localtodos", JSON.stringify(this.state.todos));
   };
-  changeTodos(newtodos) {
+  changeTodos = (newtodos) => {
     this.setState({ todos: newtodos });
   }
-  changeInput(newinputText) {
+  changeInput = (newinputText) => {
     this.setState({ inputText: newinputText });
   }
   render() {
@@ -55,11 +55,11 @@ class App extends Component {
           <Form
             inputText={this.state.inputText}
             todos={this.state.todos}
-            setTodos={this.changeTodos.bind(this)}
-            setInputText={this.changeInput.bind(this)}
+            setTodos={this.changeTodos}
+            setInputText={this.changeInput}
           />
           <TodoList
-            setTodos={this.changeTodos.bind(this)}
+            setTodos={this.changeTodos}
             todos={this.state.todos}
           />
         </main>
